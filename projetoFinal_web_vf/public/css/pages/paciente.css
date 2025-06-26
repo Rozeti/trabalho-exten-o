@@ -1,0 +1,465 @@
+/* ---------------------------------
+   Reset e Configurações Básicas
+--------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* ------------------------------
+   Cabeçalho e Navegação
+------------------------------ */
+header {
+  background-color: #1fab55;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 120px;
+  object-fit: contain;
+  margin: -20px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  position: relative;
+  padding: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+@keyframes underlinePulse {
+  0%, 100% { opacity: 0.8; transform: scaleX(0.95); }
+  50%       { opacity: 1;   transform: scaleX(1);    }
+}
+
+.btn-login {
+  background-color: #fff;
+  color: #4CAF50;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   Hero Section
+------------------------------ */
+.hero {
+  background-color: #e0f7fa;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ------------------------------
+   Blocos de Conta / Formulários
+------------------------------ */
+.account-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.account-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de Seção */
+.account-container h2 {
+  color: #28a745;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.account-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #28a745;
+  border-radius: 2px;
+}
+
+/* Formulários Gerais */
+.account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* ------------------------------
+   Bloco “Alterar Senha”
+------------------------------ */
+.password-section {
+  background-color: #f5f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-top: 30px;
+}
+
+.password-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.password-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #4CAF50;
+  border-radius: 2px;
+}
+
+.password-section .form-group {
+  margin-bottom: 18px;
+}
+
+.password-section .form-group label {
+  font-weight: 500;
+  color: #555;
+}
+
+.password-section .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.password-section .form-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* ------------------------------
+   Botões Profissionais
+------------------------------ */
+.account-form .btn-login-submit,
+.account-form .btn-delete-account {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 0;
+  margin: 12px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Salvar Alterações */
+.btn-login-submit {
+  background-image: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+  color: #fff;
+}
+
+.btn-login-submit:hover {
+  background-image: linear-gradient(135deg, #45A049 0%, #4CAF50 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Excluir Conta */
+.btn-delete-account {
+  background-image: linear-gradient(135deg, #E53935 0%, #D32F2F 100%);
+  color: #fff;
+}
+
+.btn-delete-account:hover {
+  background-image: linear-gradient(135deg, #D32F2F 0%, #E53935 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------
+   Agendar Consulta
+------------------------------ */
+#agendamentoForm {
+  margin-bottom: 40px;
+}
+
+.titulo-consultas-agendadas {
+  font-size: 1.8rem;
+  color: #28a745;
+  text-align: center;
+  margin: 40px auto 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.titulo-consultas-agendadas::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #28a745;
+  border-radius: 2px;
+}
+
+/* Lista de Consultas Agendadas */
+.consultas-agendadas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 15px;
+}
+
+#listaConsultas li {
+  background-color: #fff;
+  border-left: 4px solid #28a745;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.consulta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.consulta-data {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.consulta-horario {
+  color: #666;
+}
+
+/* Botão “Cancelar” */
+.btn-cancelar {
+  background-color: #f8d7da;
+  color: #c0392b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-cancelar:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* ------------------------------
+   WhatsApp Flutuante
+------------------------------ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  margin-top: 12px;
+}
+
+/* -------------------------------------------------
+   Ajuste fino – cartão “Resumo da consulta”
+   (cole depois das regras já existentes)
+--------------------------------------------------*/
+#resumoCardPaciente{
+  background:#F3FFF3;            /* tom bem claro de verde */
+  border-left:4px solid #0AA64E; /* mesma cor da barrinha superior */
+  border-radius:6px;
+  padding:24px;
+  margin:40px 0;
+}
+
+/* título */
+#resumoCardPaciente .titulo-resumo{
+  margin:0;
+  color:#0AA64E;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+/* risquinho logo abaixo do título  */
+#resumoCardPaciente .linha,
+#resumoCardPaciente .linha-verde{ /* deixe compatível com os 2 nomes */
+  width:72px;
+  height:3px;
+  background:#0AA64E;
+  margin:6px 0 22px;
+  border-radius:2px;
+}
+
+/* blocos de texto  */
+#resumoCardPaciente .conteudo-resumo p{
+  margin:0 0 18px;
+  line-height:1.55;
+}
+
+#resumoCardPaciente .conteudo-resumo strong{
+  display:block;          /* rótulo na própria linha */
+  font-weight:600;
+  margin-bottom:4px;      /* afastinho de 4 px do texto */
+  color:#000;
+}
+
+/* botão-olho */
+.toggle-pass{
+  position:absolute;
+  top:75%;
+  right:10px;
+  transform:translateY(-50%);
+  border:none;
+  background:transparent;
+  padding:0;
+  line-height:0;
+  cursor:pointer;
+  color:#7a7a7a;
+  transition:color .2s;
+}
+.toggle-pass:hover{ color:#4caf50; }
+
+/* ------------------------------
+   Responsividade
+------------------------------ */
+@media (max-width: 768px) {
+  .header-container,
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}

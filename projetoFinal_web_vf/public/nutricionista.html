@@ -1,0 +1,44 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Área da Nutricionista | Dra. Nathália Cavalcante</title>
+    <link rel="stylesheet" href="css/pages/nutricionista.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <img src="assets/Logotipo.png" alt="Logo" class="logo"/>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#" data-section="inicio" class="active">Início</a></li>
+            <li><a href="#" data-section="pacientes">Pacientes</a></li>
+            <li><a href="#" data-section="agenda">Agenda</a></li>
+            <li><a href="#" data-section="agendar-consulta">Agendar Consulta</a></li>
+            <li><a href="#" data-section="minha-conta">Minha Conta</a></li>
+          </ul>
+        </nav>
+        <button class="btn-login" id="logoutBtn">Sair</button>
+      </div>
+    </header>
+
+    <main class="container" id="conteudo-dinamico">
+      <!-- Conteúdo dinâmico injetado por JS -->
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Dra. Nathália Cavalcante. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/pages/nutricionista.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Nathália Cavalcante | Cadastro</title>
+
+  <!-- CSS específico desta página -->
+  <link rel="stylesheet" href="css/pages/cadastro.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <header class="login-header">
+    <div class="header-login-container">
+      <img 
+        src="assets/Logotipo.png" 
+        alt="Logo da Dra. Nathália Cavalcante" 
+        class="logo login-logo"
+      >
+      <a 
+        href="index.html" 
+        class="btn-close" 
+        title="Voltar para a página inicial"
+      >&times;</a>
+    </div>
+  </header>
+
+  <section class="login-section">
+    <div class="container login-wrapper">
+      <div class="login-container">
+        <h2>Criar Conta</h2>
+        <p>Preencha os dados para se cadastrar na plataforma</p>
+
+        <form id="cadastroForm" class="login-form">
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input 
+              type="text" 
+              id="nome" 
+              name="nome" 
+              required 
+              placeholder="Seu nome completo"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="seu@email.com"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input 
+              type="tel" 
+              id="telefone" 
+              name="telefone" 
+              required 
+              placeholder="(99) 99999-9999"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input 
+              type="date" 
+              id="dataNascimento" 
+              name="dataNascimento" 
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input 
+              type="password" 
+              id="senha" 
+              name="senha" 
+              required 
+              placeholder="Crie uma senha"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <input 
+              type="password" 
+              id="confirmarSenha" 
+              name="confirmarSenha" 
+              required 
+              placeholder="Confirme sua senha"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="role">Você é:</label>
+            <select 
+              id="role" 
+              name="role" 
+              required
+            >
+              <option value="">Selecione</option>
+              <option value="paciente">Paciente</option>
+              <option value="nutricionista">Nutricionista</option>
+            </select>
+          </div>
+
+          <div class="form-group captcha-group">
+            <label>Verificação de segurança</label>
+            <div class="captcha-container">
+              <div class="captcha-code" id="captchaText">A7B9C2</div>
+              <button 
+                type="button" 
+                class="btn-refresh" 
+                id="refreshCaptcha" 
+                title="Gerar novo código"
+              >↻</button>
+            </div>
+            <input 
+              type="text" 
+              id="captchaInput" 
+              required 
+              placeholder="Digite o código acima"
+            >
+          </div>
+
+          <button type="submit" class="btn-login-submit">Cadastrar</button>
+
+          <div class="register-link">
+            Já tem uma conta? 
+            <a href="login.html">Faça login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="login-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Dra. Nathália Cavalcante. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script ES Module desta página -->
+  <script type="module" src="js/pages/cadastro.js"></script>
+</body>
+</html>
+

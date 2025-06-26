@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dra. Nathália Cavalcante | Login</title>
+
+  <!-- CSS específico desta página -->
+  <link rel="stylesheet" href="css/pages/login.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="login-header">
+    <div class="header-login-container">
+      <img 
+        src="assets/Logotipo.png" 
+        alt="Logo da Dra. Nathália Cavalcante" 
+        class="logo login-logo"
+      />
+      <a 
+        href="index.html" 
+        class="btn-close" 
+        title="Voltar para a página inicial"
+      >&times;</a>
+    </div>
+  </header>
+
+  <section class="login-section">
+    <div class="container login-wrapper">
+      <div class="login-container">
+        <h2>Login</h2>
+        <p>Acesse sua conta para acompanhar seu plano nutricional</p>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              autocomplete="username"
+              required 
+              placeholder="seu@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              autocomplete="current-password"
+              required 
+              placeholder="Sua senha"
+            />
+            <a href="#esqueci-senha" class="forgot-password">
+              Esqueci minha senha
+            </a>
+          </div>
+
+          <div class="form-group captcha-group">
+            <label>Verificação de segurança</label>
+            <div class="captcha-container">
+              <div class="captcha-code" id="captchaText">A7B9C2</div>
+              <button 
+                type="button" 
+                class="btn-refresh" 
+                id="refreshCaptcha"
+                title="Gerar novo código"
+              >↻</button>
+            </div>
+            <input 
+              type="text" 
+              id="captchaInput" 
+              autocomplete="off"
+              required 
+              placeholder="Digite o código acima"
+            />
+          </div>
+
+          <button type="submit" class="btn-login-submit">Entrar</button>
+
+          <div class="register-link">
+            Não tem uma conta? 
+            <a href="cadastro.html">Cadastre-se</a>
+          </div>
+        </form>
+
+        <p id="statusMessage" class="status-message hidden">
+          Aguarde, carregando...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div id="loader" class="loader hidden"></div> 
+
+  <footer class="login-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Dra. Nathália Cavalcante. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script ES Module desta página -->
+  <script type="module" src="js/pages/login.js"></script>
+</body>
+</html>

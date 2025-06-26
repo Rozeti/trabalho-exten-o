@@ -1,0 +1,273 @@
+/* ============================================================
+   RESET & FUNDAMENTOS
+============================================================ */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  line-height:1.6;
+  color:#333;
+  background:#f9f9f9;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  padding:20px 0;
+}
+
+/* ============================================================
+   HEADER / NAVEGAÇÃO
+============================================================ */
+header{
+  background:#1fab55;
+  padding:20px 0;
+  overflow:hidden;
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  height:120px;
+  object-fit:contain;
+  margin:-20px 0;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.btn-login{
+  background:#fff;
+  color:#4caf50;
+  padding:10px 20px;
+  border-radius:5px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* ------------------------------------------------------------
+   Botão “voltar ao topo” ─ deslocado para não sobrepor WhatsApp
+------------------------------------------------------------ */
+.back-to-top{
+  position:fixed;
+  right:110px;     /* 40 px margem padrão + 60 px (largura do WhatsApp) + 10 px respiro */
+  bottom:80px;
+  z-index:1000;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  width:40px;
+  height:40px;
+  font-size:20px;
+  color:#fff;
+
+  background:#4caf50;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  background:#f8f2ea;
+  padding:60px 0;
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.hero-text{flex:1;padding:20px;}
+.hero-text h1{font-size:2.5rem;margin-bottom:20px;}
+.hero-text p {font-size:1.2rem;margin-bottom:20px;}
+.hero-text .btn{
+  background:#4caf50;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:5px;
+  text-decoration:none;
+}
+
+.hero-image{flex:1;padding:20px;}
+.hero-image img{width:100%;border-radius:10px;}
+
+/* ============================================================
+   SEÇÕES GENÉRICAS
+============================================================ */
+section{padding:60px 0;}
+
+.about,.services,.testimonials,.faq,.contact{
+  background:#fff;
+  margin-bottom:20px;
+}
+
+/* About */
+.about-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.about-text,.about-image{flex:1;padding:20px;}
+.about-image img{width:100%;border-radius:10px;}
+
+/* Services */
+.services ul{list-style:disc;padding-left:20px;}
+.services li{margin-bottom:10px;}
+
+/* Testimonials / Carousel */
+.testimonials{position:relative;overflow:hidden;}
+
+.carrossel-container{
+  position:relative;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 60px;
+}
+
+.carrossel-wrapper{overflow:hidden;width:100%;padding:20px 0;}
+.carrossel{display:flex;transition:transform .5s ease-in-out;}
+
+.testimonial{
+  flex:0 0 calc(100% / 3);
+  margin:0 15px;
+  padding:25px;
+  background:#f8f9fa;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+  transition:all .3s;
+}
+.testimonial:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,.15);}
+
+/* Navegação/indicadores do carrossel */
+.carrossel-btn{
+  position:absolute;
+  top:50%;transform:translateY(-50%);
+  z-index:10;
+  display:flex;align-items:center;justify-content:center;
+
+  width:50px;height:50px;font-size:24px;color:#fff;
+  background:#4caf50;border:none;border-radius:50%;cursor:pointer;
+  opacity:.9;transition:all .3s;
+}
+.carrossel-btn:hover{background:#3e8e41;opacity:1;transform:translateY(-50%) scale(1.1);}
+.carrossel-btn.prev{left:0;}
+.carrossel-btn.next{right:0;}
+
+.carrossel-indicadores{
+  display:flex;justify-content:center;gap:12px;margin-top:30px;
+}
+.carrossel-indicador{
+  width:14px;height:14px;border-radius:50%;background:#ddd;cursor:pointer;transition:all .3s;
+}
+.carrossel-indicador.active{background:#4caf50;transform:scale(1.2);}
+
+/* FAQ */
+.faq{padding:60px 0;}
+.faq-container{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid #e0e0e0;margin-bottom:15px;transition:all .3s;}
+
+.faq-question{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 0;cursor:pointer;transition:all .3s;
+}
+.faq-question h3{
+  flex:1;padding-right:20px;font-size:1.1rem;font-weight:600;color:#333;margin:0;transition:color .3s;
+}
+.faq-question:hover h3{color:#4caf50;}
+
+.faq-toggle{
+  flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:#4caf50;transition:transform .3s;
+}
+
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s;}
+.faq-answer-inner{padding:0 0 20px 0;color:#555;line-height:1.6;}
+
+.faq-item.active .faq-question h3{color:#4caf50;}
+.faq-item.active .faq-toggle{transform:rotate(45deg);}
+.faq-item.active .faq-answer{max-height:1000px;}
+
+/* ============================================================
+   CONTATO & FOOTER
+============================================================ */
+.contact{
+  text-align:left;           
+}
+
+.contact .container,           
+.contact > .contact-inner{     
+  max-width: 60%;             
+  margin:0 auto;               
+}
+
+.contact .btn{
+  display:inline-block;       
+  margin-top:10px;             
+}
+
+.contact .btn{
+  background:#4caf50;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;
+}
+
+footer{
+  background:#181b18;color:#fff;text-align:center;padding:20px 0;
+}
+
+/* ============================================================
+   WHATSAPP FLOAT
+============================================================ */
+.whatsapp-float{
+  position:fixed;
+  right:40px;
+  bottom:40px;
+  z-index:100;
+
+  width:60px;height:60px;font-size:30px;color:#fff;
+  background:#25d366;border-radius:50%;
+  box-shadow:2px 2px 3px #999;text-align:center;
+}
+.whatsapp-float img{width:35px;margin-top:12px;}
+
+/* ============================================================
+   RESPONSIVIDADE
+============================================================ */
+@media(max-width:992px){
+  .testimonial{flex:0 0 50%;margin:0 10px;}
+  .carrossel-container{padding:0 50px;}
+}
+
+@media(max-width:768px){
+  .hero-content,.about-content{flex-direction:column;text-align:center;}
+  .header-container{flex-direction:column;align-items:flex-start;}
+  .nav-links{flex-direction:column;gap:10px;}
+
+  .testimonial{flex:0 0 100%;margin:0 5px;}
+  .carrossel-container{padding:0 30px;}
+  .carrossel-btn{width:40px;height:40px;font-size:20px;}
+
+  .faq-question{padding:15px 0;align-items:flex-start;}
+  .faq-question h3{font-size:1rem;}
+  .faq-answer-inner{padding:0 0 15px 0;}
+}

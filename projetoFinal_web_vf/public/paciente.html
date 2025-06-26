@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Paciente | Dra. Nathália Cavalcante</title>
+
+  <!-- CSS específico desta página -->
+  <link rel="stylesheet" href="css/pages/paciente.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-container">
+      <img
+        src="assets/Logotipo.png"
+        alt="Logo da Dra. Nathália Cavalcante"
+        class="logo"
+      />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" data-section="inicio" class="active">Início</a></li>
+          <li><a href="#" data-section="arquivos">Arquivos</a></li>
+          <li><a href="#" data-section="consultas">Consultas</a></li>
+          <li><a href="#" data-section="minha-conta">Minha Conta</a></li>
+        </ul>
+      </nav>
+      <a href="index.html" class="btn-login">Sair</a>
+    </div>
+  </header>
+
+  <main class="container" id="conteudo-dinamico">
+    <!-- O JavaScript irá injetar aqui:
+         - Seção de boas-vindas com o nome real do paciente
+         - Seção de arquivos
+         - Seção de consultas
+         - Seção de “Minha Conta” já preenchida com os dados -->
+         
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dra. Nathália Cavalcante. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a
+    href="https://wa.me/5599999999999"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <!-- Script ES Module desta página -->
+  <script type="module" src="js/pages/paciente.js"></script>
+</body>
+</html>

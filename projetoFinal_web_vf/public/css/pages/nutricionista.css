@@ -1,0 +1,518 @@
+/* ============================================================
+   RESET & FUNDAMENTOS
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes underlinePulse {
+  0%,
+  100% {
+    opacity: .8;
+    transform: scaleX(.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* container genérico */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* largura exclusiva para o card “Minha Conta” */
+.minha-conta-section .account-container {
+  max-width: 600px; /* ajuste aqui se quiser ainda menor/maior */
+}
+
+/* ============================================================
+   LAYOUT GERAL
+============================================================ */
+/* --- Cabeçalho / Navegação --- */
+header {
+  background: #1fab55;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 120px;
+  object-fit: contain;
+  margin: -20px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  position: relative;
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+  animation: underlinePulse 1.5s infinite;
+}
+
+.btn-login {
+  background: #fff;
+  color: #4caf50;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Hero --- */
+.hero {
+  background: #e0f7fa;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-text h1 { font-size: 2.5rem; margin-bottom: 20px; }
+.hero-text p  { font-size: 1.2rem; margin-bottom: 20px; }
+
+.hero-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ============================================================
+   COMPONENTES / PÁGINAS
+============================================================ */
+/* --- Seções (blocos principais) --- */
+.account-section {
+  background: #e0f7fa;
+  padding: 40px 0;
+}
+
+.account-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+}
+
+.account-container h2 {
+  color: #4caf50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* --- Formulários & botões genéricos --- */
+.account-form,
+.consulta-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color .3s;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.btn-login-submit,
+.btn-consulta-submit {
+  background: #4caf50;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color .3s;
+}
+
+.btn-login-submit:hover,
+.btn-consulta-submit:hover { background: #3e8e41; }
+
+/* --- Lista / cards de pacientes --- */
+.search-box       { margin-bottom: 20px; }
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.patient-list  { max-height: 300px; overflow-y: auto; }
+
+.patient-card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  cursor: pointer;
+  transition: transform .3s;
+}
+.patient-card:hover { transform: translateY(-3px); }
+
+/* --- Detalhes do paciente --- */
+.patient-details-card {
+  margin-top: 30px;
+  background: #f8fffc;
+  border: 1px solid #cceedd;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,.05);
+  padding: 20px;
+}
+
+.patient-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-basic-info h3 { color: #1fab55; margin-bottom: 5px; }
+.patient-basic-info p  { margin-bottom: 3px; }
+
+.patient-actions button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  font-size: .9rem;
+  cursor: pointer;
+  border: 1px solid #1fab55;
+  border-radius: 5px;
+  background: #fff;
+  color: #1fab55;
+  transition: .2s;
+}
+.patient-actions .btn-schedule { background: #1fab55; color: #fff; }
+.patient-actions button:hover  { opacity: .9; }
+
+/* título interno */
+.patient-details-card .section-title {
+  color: #28a745;
+  font-size: 1.4rem;
+  margin: 30px 0 10px;
+  position: relative;
+  padding-bottom: 5px;
+}
+.patient-details-card .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #28a745;
+  border-radius: 2px;
+}
+
+/* --- Agenda (nutricionista) --- */
+.agenda-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.day-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.day-title {
+  color: #1fab55;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0f7fa;
+  padding-bottom: 5px;
+}
+
+/* linha com conteúdo + botão ao lado */
+.appointment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e5e5e5;
+  gap: 1rem;
+}
+
+/* botão “Cancelar” – leve */
+.btn-cancel-agenda {
+  border: none;
+  background: #fdecec;
+  color: #c73b3b;
+  padding: 5px 20px;
+  border-radius: 6px;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-cancel-agenda:hover   { background: #f9d7d8; transform: translateY(-1px); }
+.btn-cancel-agenda:active  { transform: translateY(0); opacity: .85; }
+
+/* --- Modal genérico --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,.4);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal .form-group       { margin-bottom: 15px; }
+.modal .form-group label { font-weight: 600; display: block; margin-bottom: 6px; }
+.modal .form-group input,
+.modal .form-group textarea,
+.modal .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* --- Card de Arquivos --- */
+.arquivos-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.arquivos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.arquivos-header h4    { margin: 0; font-size: 1.2rem; color: #555; }
+.arquivos-header small { display: block; color: #888; font-size: .85rem; }
+
+.arquivos-acoes .icon-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #666;
+  transition: color .2s;
+}
+.arquivos-acoes .icon-button:hover { color: #333; }
+
+.arquivos-lista { min-height: 60px; padding: 10px 0; border-top: 1px solid #eee; }
+.arquivos-lista p { text-align: center; color: #777; font-style: italic; margin: 0; }
+
+.arquivo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: .6rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-del-arq {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #b80303;
+  margin-left: .5rem;
+}
+.btn-del-arq:hover { color: #e00; }
+
+/* --- Bloco “Minha Conta” reutiliza variáveis de formulário --- */
+.password-section {
+  background: #f5f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-top: 30px;
+}
+
+.password-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.password-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: #4caf50;
+  border-radius: 2px;
+}
+
+.password-section .form-group             { margin-bottom: 18px; }
+.password-section .form-group label       { font-weight: 500; color: #555; }
+.password-section .form-group input       {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color .3s;
+}
+.password-section .form-group input:focus { border-color: #4caf50; outline: none; }
+
+.account-form .btn-login-submit,
+.account-form .btn-delete-account {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 0;
+  margin: 12px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.btn-login-submit                  { background-image: linear-gradient(135deg,#4caf50 0%,#45a049 100%); }
+.btn-login-submit:hover            {
+  background-image: linear-gradient(135deg,#45a049 0%,#4caf50 100%);
+  box-shadow: 0 6px 12px rgba(0,0,0,.15);
+}
+
+.btn-delete-account{ 
+  background-image: linear-gradient(135deg,#e53935 0%,#d32f2f 100%); 
+  color: #fff;
+}
+.btn-delete-account:hover          {
+  background-image: linear-gradient(135deg,#d32f2f 0%,#e53935 100%);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,.15);
+}
+
+/* botão-olho */
+.toggle-pass{
+  position:absolute;
+  top:75%;
+  right:10px;
+  transform:translateY(-50%);
+  border:none;
+  background:transparent;
+  padding:0;
+  line-height:0;
+  cursor:pointer;
+  color:#7a7a7a;
+  transition:color .2s;
+}
+.toggle-pass:hover{ color:#4caf50; }
+
+
+/* ============================================================
+   RESPONSIVIDADE
+============================================================ */
+@media (max-width: 768px) {
+  .header-container      { flex-direction: column; align-items: center; }
+  .nav-links             { flex-direction: column; gap: 10px; margin-top: 10px; }
+  .hero-content          { text-align: center; flex-direction: column; }
+  .patient-details-header{ flex-direction: column; gap: 15px; }
+  .patient-actions       { flex-direction: row; }
+}
